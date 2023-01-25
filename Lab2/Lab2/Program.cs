@@ -30,6 +30,11 @@ public class CityModel
             $"Country: {Country}\n" +
             $"Population {Population}\n" +
             $"Area: {Area}\n" +
-            $"Local time: {LocalTime}";
+            $"Local time: {LocalTime}\n" + 
+            $"Bytes: {GetSize()}";
+    }
+    unsafe int GetSize()
+    {
+        return Name.Length + Country.Length + sizeof(int) + sizeof(double) + sizeof(DateTime);
     }
 }
